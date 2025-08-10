@@ -1,0 +1,21 @@
+<div class="card">
+  <h1>Saved Contacts</h1>
+  <p class="muted">These entries come from your MongoDB collection.</p>
+
+  <div *ngIf="loading" class="muted" style="margin-top:12px;">Loading…</div>
+  <div *ngIf="!loading && error" class="error">{{ error }}</div>
+  <div *ngIf="!loading && !error && contacts.length === 0" class="empty">
+    No contacts yet. Try the Contact page.
+  </div>
+
+  <div *ngIf="!loading && !error && contacts.length" class="grid">
+    <div *ngFor="let c of contacts" class="contact-card">
+      <div class="contact-row">
+        <strong>{{ c.name }}</strong>
+        <small *ngIf="c.createdAt">{{ c.createdAt | date:'short' }}</small>
+      </div>
+      <div class="contact-email">{{ c.email }}</div>
+      <p class="contact-msg">{{ c.message }}</p>
+    </div>
+  </div>
+</div>

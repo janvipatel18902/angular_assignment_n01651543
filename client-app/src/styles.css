@@ -1,0 +1,40 @@
+/* ===== Global palette, page background, fonts, links ===== */
+:root{
+  --bg-0:#07101f;
+  --frame:rgba(12,20,36,.88);
+  --card-1:#0f1f3f;
+  --text:#e9eef7;
+  --muted:#9fb2cc;
+  --primary:#2f6bff;
+  --accent:#19d3ff;
+  --border:rgba(255,255,255,.08);
+  --ring:rgba(79,140,255,.32);
+  --shadow-xl:0 30px 110px rgba(0,0,0,.55);
+  --shadow-lg:0 18px 60px rgba(0,0,0,.45);
+}
+
+html,body{height:100%;margin:0;}
+body{
+  background:
+    radial-gradient(1200px 700px at -15% -10%, rgba(47,107,255,.14), transparent 60%),
+    radial-gradient(1000px 600px at 110% -10%, rgba(25,211,255,.10), transparent 60%),
+    var(--bg-0);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+/* Link reset (no purple/blue defaults) */
+a{color:#a8c4ff;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Utility shared across app */
+.btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff; padding:12px 18px; border-radius:12px; font-weight:700;
+  border:1px solid var(--border);
+  box-shadow:0 12px 36px rgba(47,107,255,.35);
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}

@@ -1,0 +1,64 @@
+.nav{
+  background:linear-gradient(180deg, rgba(8,16,32,.92), rgba(8,16,32,.74));
+  backdrop-filter:blur(10px);
+}
+
+/* KEY FIX: full width of the frame, padding included */
+.nav-inner{
+  width:100%;
+  box-sizing:border-box;     /* include padding in width so it never overflows */
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.2px;
+}
+
+.dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2f6bff,#19d3ff);
+  box-shadow:0 0 14px #19d3ff;
+}
+
+.links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;            /* allow wrap on smaller widths */
+}
+
+.links a{
+  color:#cfe0ff;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid transparent;
+  text-decoration:none;
+  transition:background .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+.links a:hover{
+  background:rgba(255,255,255,.07);
+  transform:translateY(-1px);
+}
+
+.links a.active{
+  background:linear-gradient(135deg, rgba(47,107,255,.32), rgba(25,211,255,.26));
+  border-color:rgba(255,255,255,.10);
+  color:#e9eef7;
+}
+
+/* Optional: stack brand/links on very narrow screens */
+@media (max-width: 560px){
+  .nav-inner{ flex-direction:column; align-items:stretch; }
+  .links{ justify-content:center; }
+}

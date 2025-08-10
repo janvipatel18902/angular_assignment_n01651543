@@ -1,0 +1,22 @@
+.grid {
+  display:grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-top: 20px;
+}
+.contact-card {
+  background: linear-gradient(180deg, rgba(20,36,70,.65), rgba(16,28,56,.55));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 12px 34px rgba(0,0,0,.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.contact-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,.55); }
+.contact-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.contact-row strong { font-size: 16px; }
+.contact-row small { color: var(--muted); }
+.contact-email { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.contact-msg   { margin: 10px 0 0; color: var(--text); }
+.empty { color: var(--muted); margin-top: 16px; }
+.error { color: var(--danger); margin-top: 12px; }

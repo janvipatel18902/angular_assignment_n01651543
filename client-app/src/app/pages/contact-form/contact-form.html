@@ -1,0 +1,32 @@
+<div class="card">
+  <h1>Contact</h1>
+  <p>Submit a message—your entry will be stored in MongoDB.</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" formControlName="name" placeholder="Enter your Name" />
+      <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="Enter your Email I'd" />
+      <div class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+        Valid email required.
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Message</label>
+      <textarea rows="4" formControlName="message" placeholder="Write your message..."></textarea>
+      <div class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+        Message is required.
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="contactForm.invalid">Submit</button>
+  </form>
+</div>
